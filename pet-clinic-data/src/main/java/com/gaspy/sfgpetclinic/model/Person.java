@@ -1,6 +1,6 @@
 package com.gaspy.sfgpetclinic.model;
 
-public class Person {
+public class Person extends BaseEntity {
     public String firstName;
     public String lastName;
 
