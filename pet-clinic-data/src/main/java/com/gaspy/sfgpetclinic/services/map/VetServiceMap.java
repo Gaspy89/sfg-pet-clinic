@@ -2,10 +2,11 @@ package com.gaspy.sfgpetclinic.services.map;
 
 import com.gaspy.sfgpetclinic.model.Vet;
 import com.gaspy.sfgpetclinic.services.CrudService;
+import com.gaspy.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
