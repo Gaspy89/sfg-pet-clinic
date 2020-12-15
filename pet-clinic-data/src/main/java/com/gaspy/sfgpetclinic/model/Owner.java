@@ -20,32 +20,26 @@ public class Owner extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
-    @Override
     public String getAddress() {
         return address;
     }
 
-    @Override
     public void setAddress(String address) {
         this.address = address;
     }
 
-    @Override
     public String getCity() {
         return city;
     }
 
-    @Override
     public void setCity(String city) {
         this.city = city;
     }
 
-    @Override
     public String getTelephone() {
         return telephone;
     }
 
-    @Override
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }

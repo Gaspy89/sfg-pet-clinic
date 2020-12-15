@@ -1,8 +1,7 @@
 package com.gaspy.sfgpetclinic.services.map;
 
-import com.gaspy.sfgpetclinic.model.Speciality;
+import com.gaspy.sfgpetclinic.model.Specialty;
 import com.gaspy.sfgpetclinic.model.Vet;
-import com.gaspy.sfgpetclinic.services.CrudService;
 import com.gaspy.sfgpetclinic.services.SpecialityService;
 import com.gaspy.sfgpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
@@ -32,7 +31,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
         if(vet.getSpecialities().size() > 0) {
             vet.getSpecialities().forEach(speciality -> {
                 if(speciality.getId() == null){
-                    Speciality savedSpeciality = specialityService.save(speciality);
+                    Specialty savedSpeciality = specialityService.save(speciality);
                     speciality.setId(savedSpeciality.getId());
                 }
             });

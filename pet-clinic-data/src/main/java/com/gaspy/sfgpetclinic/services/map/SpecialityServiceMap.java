@@ -1,25 +1,25 @@
 package com.gaspy.sfgpetclinic.services.map;
 
-import com.gaspy.sfgpetclinic.model.Speciality;
+import com.gaspy.sfgpetclinic.model.Specialty;
 import com.gaspy.sfgpetclinic.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService {
+public class SpecialityServiceMap extends AbstractMapService<Specialty, Long> implements SpecialityService {
     @Override
-    public Set<Speciality> findAll() {
+    public Set<Specialty> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Speciality findById(Long id) {
+    public Specialty findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Speciality save(Speciality speciality) {
+    public Specialty save(Specialty speciality) {
         return null;
     }
 
@@ -29,7 +29,7 @@ public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> i
     }
 
     @Override
-    public void delete(Speciality speciality) {
+    public void delete(Specialty speciality) {
         super.delete(speciality);
     }
 }
