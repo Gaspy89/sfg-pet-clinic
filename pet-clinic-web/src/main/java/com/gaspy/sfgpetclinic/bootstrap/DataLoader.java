@@ -1,10 +1,7 @@
 package com.gaspy.sfgpetclinic.bootstrap;
 
 import com.gaspy.sfgpetclinic.model.*;
-import com.gaspy.sfgpetclinic.services.OwnerService;
-import com.gaspy.sfgpetclinic.services.PetTypeService;
-import com.gaspy.sfgpetclinic.services.SpecialityService;
-import com.gaspy.sfgpetclinic.services.VetService;
+import com.gaspy.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+                      SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -85,7 +85,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasPet);
         ownerService.save(owner2);
 
-        System.out.println("Added Owners");
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Mirci has a headache");
+        visitService.save(catVisit);
+
+        System.out.println("Added Owners...");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
@@ -99,6 +105,6 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet2);
         vet2.getSpecialities().add(savedSurgery);
 
-        System.out.println("Added Vets");
+        System.out.println("Added Vets...");
     }
 }
