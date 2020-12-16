@@ -1,7 +1,6 @@
 package com.gaspy.sfgpetclinic.services.springdatajpa;
 
 import com.gaspy.sfgpetclinic.model.PetType;
-import com.gaspy.sfgpetclinic.model.Vet;
 import com.gaspy.sfgpetclinic.repositories.PetTypeRepository;
 import com.gaspy.sfgpetclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;

@@ -1,6 +1,5 @@
 package com.gaspy.sfgpetclinic.services.springdatajpa;
 
-import com.gaspy.sfgpetclinic.model.PetType;
 import com.gaspy.sfgpetclinic.model.Specialty;
 import com.gaspy.sfgpetclinic.repositories.SpecialtyRepository;
 import com.gaspy.sfgpetclinic.services.SpecialityService;
