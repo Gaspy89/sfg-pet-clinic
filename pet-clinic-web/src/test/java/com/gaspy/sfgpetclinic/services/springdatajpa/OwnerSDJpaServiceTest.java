@@ -88,6 +88,7 @@ class OwnerSDJpaServiceTest {
     @Test
     void delete() {
         service.delete(returnOwner);
+        //verify that delete only runs once
         verify(ownerRepository).delete(any());
     }
 
