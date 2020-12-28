@@ -1,15 +1,16 @@
 version: 2.1
 
-executors:
-  my-executor:
-    docker:
-      - image: circleci/openjdk:stretch
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-
 orbs:
   maven: circleci/maven@0.0.12
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:stretch
+    steps:
+      - checkout
+      - run: |
+          java --version
 
 workflows:
   maven_test:
